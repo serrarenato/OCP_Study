@@ -1,4 +1,4 @@
-package Arrays;
+package ocp.capitulo3_collections_generic.arrays;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

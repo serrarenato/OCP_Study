@@ -1,4 +1,4 @@
-package Bounds;
+package ocp.capitulo3_collections_generic.generics.bound;
 
 import java.util.List;
 import java.util.ArrayList;
