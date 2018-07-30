@@ -20,7 +20,10 @@ public class ComparatorTest {
 		list.add(car4);
 		Comparator<Car> comparatorByColor = (c1, c2) -> c1.getColor().compareTo(c2.getColor());
 		Collections.sort(list, comparatorByColor);
-		System.out.println(Collections.indexedBinarySearch(list, "white",comparatorByColor));
+
 		System.out.println(list);
+		System.out.println(Collections.binarySearch(list, car1)); // because dont have the order
+	
+		System.out.println(Collections.binarySearch(list, car3,comparatorByColor));
 	}
 }
