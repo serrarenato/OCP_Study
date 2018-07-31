@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import ocp.capitulo3_collections_generic.Comparable.Car;
 
@@ -23,7 +25,28 @@ public class ComparatorTest {
 
 		System.out.println(list);
 		System.out.println(Collections.binarySearch(list, car1)); // because dont have the order
-	
-		System.out.println(Collections.binarySearch(list, car3,comparatorByColor));
+
+		System.out.println(Collections.binarySearch(list, car3, comparatorByColor));
+		// treeSet example
+		Set<Car> treeSet = new TreeSet<>();
+		treeSet.add(car1);
+		treeSet.add(car2);
+		treeSet.add(car3);
+		treeSet.add(car4);
+		System.out.println("TreeSet: " + treeSet);
+
+		Set<Car> treeSet2 = new TreeSet<>(new Comparator<Car>() {
+			@Override
+			public int compare(Car car1, Car car2) {
+				return car1.getColor().compareTo(car2.getColor());
+			}
+
+		});
+		treeSet2.add(car1);
+		treeSet2.add(car2);
+		treeSet2.add(car3);
+		treeSet2.add(car4);
+		System.out.println("TreeSet2: " + treeSet2);
+
 	}
 }

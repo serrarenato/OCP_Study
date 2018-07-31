@@ -33,10 +33,24 @@ public class TestComparable {
 		CarWithoutComparable carWithoutComparable2 = new CarWithoutComparable("vectra", "hatch", "black");
 		CarWithoutComparable carWithoutComparable3 = new CarWithoutComparable("voyage", "sedan", "blue");
 		CarWithoutComparable carWithoutComparable4 = new CarWithoutComparable("beatle", "hatch", "white");
+		
 //		treeSet1.add(carWithoutComparable1);
 //		treeSet1.add(carWithoutComparable2);
 //		treeSet1.add(carWithoutComparable3);
 //		treeSet1.add(carWithoutComparable4);
 //		System.out.println(treeSet1);
+		
+		// Try use Collections.sort without comparable cause a compile error
+		List<CarWithoutComparable> listCar1 = new ArrayList<>();
+
+		listCar1.add(carWithoutComparable1);
+		listCar1.add(carWithoutComparable2);
+		listCar1.add(carWithoutComparable3);
+		listCar1.add(carWithoutComparable4);
+		treeSet1.add(carWithoutComparable4);
+		System.out.println("ArrayList without comparable: "+ listCar1);
+		//Collections.sort(listCar1); 
+		System.out.println("ArrayList without comparable Sorted: "+ listCar1);
+
 	}
 }
