@@ -22,6 +22,17 @@ public class ConsumerTest {
 		Consumer<List<Integer>> consumer2 = Collections::sort;
 		consumer2.accept(listInteger);
 		System.out.println("Consumer 2: " + listInteger);
+		Consumer<Integer> i = System.out::println;
+		printList(listInteger, i);
+		Consumer<Integer> i2 = i.andThen(l -> System.out.print("- AndThen ="+l +" "));
+		printList(listInteger, i2);
+	}
+	public static void printList(List<Integer> list, Consumer<Integer> i) {
+		System.out.println("Dentro do metodo:");
+		for (Integer integer : list) {
+			i.accept(integer);	
+		}
+		
 	}
 
 }

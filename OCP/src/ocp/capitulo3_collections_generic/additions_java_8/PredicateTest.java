@@ -1,5 +1,6 @@
 package ocp.capitulo3_collections_generic.additions_java_8;
 
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class PredicateTest {
@@ -14,5 +15,18 @@ public class PredicateTest {
 		System.out.println(predicate2.test("R"));
 		System.out.println(predicate2.test("E"));
 
+		List<String> listString = new ArrayList<>();
+		listString.add("10");
+		listString.add("11");
+		listString.add("90");
+		listString.removeIf(l -> l.startsWith("1")); // removeIf get a Predicate
+		listString.remo
+		System.out.println("RemoveIf ->" + listString);
+		teste(l -> l.startsWith("1"));
+
+	}
+	public static boolean teste (Function<String, Boolean> x) {
+		return false;
+		
 	}
 }
