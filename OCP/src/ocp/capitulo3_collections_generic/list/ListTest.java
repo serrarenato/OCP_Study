@@ -12,10 +12,12 @@ public class ListTest {
 		List<String> list = new ArrayList<>();
 		list.add("renato");
 		list.add("joao");
+		list.add(1, "cabeçudo");
 		list.add("sergio");
 		list.add("caio");
 		list.add("renato");
 		list.add("renato2");
+		System.out.println("ArrayList:"+list);
 		System.out.println("last: " + list.lastIndexOf("renato"));
 		System.out.println("index: " + list.indexOf("renato"));
 		System.out.println(list);
@@ -40,10 +42,12 @@ public class ListTest {
 		List<String> linkedList = new LinkedList<>();
 		linkedList.add("renato");
 		linkedList.add("joao");
+		linkedList.set(1, "cabeçudo");
 		linkedList.add("sergio");
 		linkedList.add("caio");
 		linkedList.add("renato");
 		linkedList.add("renato2");
+		
 		System.out.println("linkedList: " + linkedList.lastIndexOf("renato"));
 		System.out.println(linkedList);
 		
