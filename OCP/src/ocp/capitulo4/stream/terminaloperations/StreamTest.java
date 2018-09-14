@@ -1,8 +1,10 @@
-package ocp.capitulo4.stream;
+package ocp.capitulo4.stream.terminaloperations;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.function.BinaryOperator;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -32,8 +34,8 @@ public class StreamTest {
 		///// findAny
 		streamTest = Stream.of("teste", "teste2", "teste31");
 		System.out.println("FindAny:" + streamTest.findAny());
-		///Stream streamTest2 = Stream.generate(() -> "joao"); // infinite stream
-		//streamTest2.forEach(System.out::print);
+		/// Stream streamTest2 = Stream.generate(() -> "joao"); // infinite stream
+		// streamTest2.forEach(System.out::print);
 
 		// AnyMatch AllMatch NoneMatch
 		List<String> list1 = Arrays.asList("teste", "2", "teste3");
@@ -41,8 +43,18 @@ public class StreamTest {
 		System.out.println("AllMatch: " + list1.stream().allMatch(predicate));
 		System.out.println("AnyMatch: " + list1.stream().anyMatch(predicate));
 		System.out.println("NoneMatch: " + list1.stream().noneMatch(predicate));
-		
-		//Reduce
-		
+
+		// Reduce
+		Stream<String> stream = Stream.of("w", "o", "l", "f");
+		BinaryOperator<String> binaryConcat = (l, v) -> l.concat(v);
+		Optional<String> word = stream.reduce(binaryConcat);
+		System.out.println("reduce: " + word);
+		stream = Stream.of("w", "o", "l", "f");
+		String word2 = stream.reduce("", (a, b) -> a.concat(b));
+		System.out.println("reduce2: " + word2);
+
+		List<Integer> numbers = Arrays.asList(10, 2, 4, 5);
+		System.out.println(numbers.stream().reduce(1, (a, b) -> a * b));
+		System.out.println(numbers.stream().reduce(1, (a, b) -> a * b, (a, b) -> a * b)); // Its a parallel Stream
 	}
 }
