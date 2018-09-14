@@ -41,5 +41,8 @@ public class StreamTest {
 		System.out.println("AllMatch: " + list1.stream().allMatch(predicate));
 		System.out.println("AnyMatch: " + list1.stream().anyMatch(predicate));
 		System.out.println("NoneMatch: " + list1.stream().noneMatch(predicate));
+		
+		//Reduce
+		
 	}
 }
