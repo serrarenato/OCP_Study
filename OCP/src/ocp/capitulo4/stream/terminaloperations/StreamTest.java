@@ -56,5 +56,14 @@ public class StreamTest {
 		List<Integer> numbers = Arrays.asList(10, 2, 4, 5);
 		System.out.println(numbers.stream().reduce(1, (a, b) -> a * b));
 		System.out.println(numbers.stream().reduce(1, (a, b) -> a * b, (a, b) -> a * b)); // Its a parallel Stream
+		
+		//Lazy inicialization
+		System.out.println("Lazy Inicialization:");
+		List<String> fruits = new ArrayList<String>();
+		fruits.add("apple");
+		fruits.add("mellow");
+		Stream st = fruits.stream();
+		fruits.add("banana");
+		st.forEach(System.out::println);
 	}
 }
