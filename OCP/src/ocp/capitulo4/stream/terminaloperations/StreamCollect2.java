@@ -16,7 +16,7 @@ public class StreamCollect2 {
 		List<String> list1 = Arrays.asList("teste", "sebastiao", "maria", "carla", "joao");
 		String x = list1.stream().collect(Collectors.joining(" # "));
 		System.out.println(x);
-
+		
 		// Average
 		Double average = list1.stream().collect(Collectors.averagingInt(String::length));
 		System.out.println("average: " + average);
