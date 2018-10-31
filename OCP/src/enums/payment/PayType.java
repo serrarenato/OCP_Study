@@ -8,7 +8,6 @@ public enum PayType {
 	},
 	WEEKEND
 	{
-
 		int overtimePay(int minsWorked, int payRate) {
 			return minsWorked * payRate / 2;
 		}
