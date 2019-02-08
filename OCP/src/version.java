@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 public class version {
 public static void main(String[] args) {
+	
 	List<Map<String, String>> productTypeExtensionsRepresentations = new ArrayList<>();
 	productTypeExtensionsRepresentations.add(new HashMap<String, String>(){{put("nome", "Renato");put("Version", "1.0");}});
 	productTypeExtensionsRepresentations.add(new HashMap<String, String>(){{put("nome", "Renato2");put("Version", "2.0");}});
