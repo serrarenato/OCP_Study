@@ -4,3 +4,5 @@ teste de cherry-pick
 
 teste
 teste
+
+Somente esta linha deve vir no cherrypick
